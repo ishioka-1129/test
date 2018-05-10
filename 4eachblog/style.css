@@ -1,0 +1,45 @@
+header{
+}
+
+.menu{
+  width:100%;
+  height:55px;
+  background-color:black;
+}
+
+.menu li{
+  float:left;
+  list-style:none;
+  line-height:58px;
+  padding-right:90px;
+  color:white;
+}
+
+main{
+  clear:both;
+}
+
+.main-container{
+  width:100%;
+  margin:0 auto;
+  margin-top:0px;
+}
+
+.right{
+  float:left;
+  width:70%;
+  height:500px;
+}
+
+.left{
+  float:left;
+  width:30%;
+  height:500px;
+}
+.right h2{
+  clear:both;
+  padding-left:10px;
+  border-left:4px solid black;
+  border-bottom:2px solid black;
+}
+
