@@ -1,0 +1,20 @@
+
+public class Test {
+	public static void main(String[] args){
+		Personfinal taro = new Personfinal();
+		taro.name="山田太郎";
+		taro.age=20;
+
+		Personfinal jiro = new Personfinal();
+		jiro.name="木村次郎";
+		jiro.age=18;
+
+		Personfinal hanako = new Personfinal();
+		hanako.name="鈴木花子";
+		hanako.age=16;
+
+		System.out.println(taro.name);
+		System.out.println(taro.age);
+	}
+
+}

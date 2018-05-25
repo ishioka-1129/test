@@ -1,0 +1,18 @@
+
+public class Personfinal {
+	public String name = null;
+	public String team = null;
+	public String skill = null;
+	public int power = 0;
+	public int brain = 0;
+	public String active = null;
+}
+
+public Personfinal(String name,String team,String skill,int power.int brain,String active){
+	this.name=name;
+	this.team=team;
+	this.skill=skill;
+	this.power=0;
+	this.brain=0;
+	this.active=active;
+}

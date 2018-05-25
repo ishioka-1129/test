@@ -1,0 +1,44 @@
+
+public class Test {
+	public static void main(String[] args){
+		Personfinal sonken=new Personfinal();
+		sonken.name="孫権";
+		sonken.skill="防柵　魅力";
+		sonken.active="若き王の手腕";
+
+		System.out.println(sonken.name);
+		System.out.println(sonken.skill);
+		System.out.println(sonken.active);
+		System.out.print("\n");
+
+		Personfinal sousou=new Personfinal();
+		sousou.name="曹操";
+		sousou.skill="魅力";
+		sousou.active="覇者の求心";
+
+		System.out.println(sousou.name);
+		System.out.println(sousou.skill);
+		System.out.println(sousou.active);
+		System.out.print("\n");
+
+		Personfinal ryubi=new Personfinal();
+		ryubi.name="劉備";
+		ryubi.skill="復活　魅力";
+		ryubi.active="劉備の大徳";
+
+		System.out.println(ryubi.name);
+		System.out.println(ryubi.skill);
+		System.out.println(ryubi.active);
+		System.out.print("\n");
+
+		Personfinal ryohu=new Personfinal();
+		ryohu.name="呂布";
+		ryohu.skill="勇猛";
+		ryohu.active="天下無双・飛";
+
+		System.out.println(ryohu.name);
+		System.out.println(ryohu.skill);
+		System.out.println(ryohu.active);
+		System.out.print("\n");
+	}
+}

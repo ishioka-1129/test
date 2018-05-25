@@ -1,0 +1,7 @@
+
+public class SmartPhone implements Mp3Player{
+	public void play(){
+		System.out.println("再生");
+	}
+
+}

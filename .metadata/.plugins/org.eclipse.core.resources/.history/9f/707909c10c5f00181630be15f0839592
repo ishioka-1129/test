@@ -1,0 +1,7 @@
+
+public class Personfinal {
+	public String name = null;
+;
+	public String skill = null;
+
+}

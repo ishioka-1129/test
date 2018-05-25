@@ -1,0 +1,11 @@
+
+public class Hensuu {
+	public static void main(String[] args){
+
+		System.out.println(momo(5));
+		System.out.println(momo(9));
+	}
+		public static int momo(int moyasi){
+			return moyasi*moyasi;
+		}
+	}

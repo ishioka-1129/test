@@ -1,0 +1,8 @@
+
+public class Hensuu {
+	public static void main(String[] args){
+		// 変数
+		String s=new String("Hello");
+		System.out.println(s);
+	}
+}

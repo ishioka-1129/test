@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="型 &apos;Person0&apos; を &apos;Person&apos; に名前変更します&#x0D;&#x0A;- 元のプロジェクト: &apos;Person0&apos;&#x0D;&#x0A;- オリジナル要素: &apos;Person0&apos;&#x0D;&#x0A;- 名前変更済み要素: &apos;Person&apos;&#x0D;&#x0A;- リファクタリングされた要素の参照を更新&#x0D;&#x0A;- 類似した名前付き要素を名前変更&#x0D;&#x0A;- コメントおよびストリング内のテキスト出現箇所の更新" description="型名 &apos;Person0&apos; を変更します" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{Person0.java[Person0" matchStrategy="1" name="Person" qualified="false" references="true" similarDeclarations="true" stamp="1527215422562" textual="false" version="1.0"/>
+</session>

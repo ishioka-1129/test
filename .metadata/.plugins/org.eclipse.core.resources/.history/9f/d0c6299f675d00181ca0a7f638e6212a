@@ -1,0 +1,10 @@
+
+public class Hensuu {
+	public static void main(String[] args){
+
+
+		public static String name(String name1){
+			return name + "さん";
+		}
+	}
+}
