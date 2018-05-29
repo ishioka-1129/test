@@ -1,9 +1,0 @@
-
-public class HelloWorld {
-
-	public static void main(String[] args) {
-		// Hello Worldの出力
-		System.out.println("例外が\r\n発生しました。");
-	}
-
-}

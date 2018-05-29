@@ -1,8 +1,0 @@
-
-public class Personfinal {
-	public String name = null;
-	public String phonenumber = null;
-	public String address = null;
-	public String skill = null;
-
-}

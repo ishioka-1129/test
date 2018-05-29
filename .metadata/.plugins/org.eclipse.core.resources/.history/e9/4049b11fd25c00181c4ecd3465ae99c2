@@ -1,7 +1,0 @@
-
-public class Hensuu {
-	public static void main(String[] args){
-		// 変数
-		System.out.println("yabatanien");
-	}
-}

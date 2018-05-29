@@ -1,5 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
+	<item value="C:\Users\internousdev\Desktop\mysql-connector-java-5.1.46" key="org.eclipse.jdt.ui.lastextjar"/>
+	<section name="RefactoringWizard.preview">
+		<item value="870" key="width"/>
+		<item value="400" key="height"/>
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="true" key="updateSimilarElements"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="false" key="updateTextualMatches"/>
+	</section>
+	<section name="SelfEncapsulateFieldWizard">
+		<item value="false" key="GenerateJavadoc"/>
+	</section>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="1" key="layout"/>
 		<item value="true" key="group_libraries"/>
