@@ -1,0 +1,15 @@
+
+public class Test {
+	public static void main(String[] args){
+		TestUserDAO dao = new TestUserDAO();
+		dao.select("taro","123");
+//		dao.selectAll();
+//		dao.selectByName("taro");
+//		dao.selectByPassword("123");
+//		dao.updateUserNameByUserName("saburo","taro");
+//		dao.updatePasswordByPassword("456", "828828");
+//		dao.insert(4,"shiro","012");
+//		dao.insert(100,"michael","0120441222");
+	}
+
+}
