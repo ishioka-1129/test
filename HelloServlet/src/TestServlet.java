@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+
 @WebServlet("/TestServlet")
 public class TestServlet extends HttpServlet {
 
@@ -32,7 +33,8 @@ public class TestServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html；charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
+
 		String username=request.getParameter("username");
 		String password=request.getParameter("password");
 		System.out.println(username);
@@ -41,7 +43,6 @@ public class TestServlet extends HttpServlet {
 		PrintWriter out=response.getWriter();
 
 		out.println("<html><head></head><body><br>"+username+"<br>"+password+"</body></html>");
-
 	}
 
 }

@@ -9,17 +9,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 @WebServlet("/InquiryServlet")
 public class InquiryServlet extends HttpServlet {
 
     public InquiryServlet() {
         super();
-        }
+    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; Charset=UTF-8");
+		response.setContentType("text/html; charset=UTF-8");
 		String name = request.getParameter("name");
 
 		System.out.println(name);
