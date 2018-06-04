@@ -7,14 +7,13 @@
 <title>TEST</title>
 </head>
 <body>
-<form method="post" action="total-out.jsp">
-<input type="text"name="price">
-円 x
-<input type="text"name="count">
-個+送料
-<input type="text"name="delivery">
-円=
-<input type="submit"value="計算">
-</form>
+<%! static int countA=0; %>
+<%
+int countB=0;
+countA++;
+countB++;
+%>
+<p>宣言による変数 countA=<%=countA %></p>
+<p>スクリプトレットによる変数 countB=<%=countB %></p>
 </body>
 </html>

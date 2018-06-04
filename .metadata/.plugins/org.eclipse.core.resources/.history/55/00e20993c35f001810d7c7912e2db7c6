@@ -1,6 +1,0 @@
-
-public class Person0 {
-	public String name = null;
-	public int age = 0;
-
-}
