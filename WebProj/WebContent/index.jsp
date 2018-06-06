@@ -3,12 +3,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <title>INDEX</title>
 </head>
 <body>
-  <form action="HelloStrutsAction">
+  <s:form action="HelloStrutsAction">
     <s:submit value="HelloStruts"/>
-  </form>
+  </s:form>
+
+  <s:form action="WelcomeAction">
+    <s:submit value="Welcome"/>
+  </s:form>
+
+  <s:form action="InquiryAction">
+    <s:submit value="問い合わせ"/>
+  </s:form>
+  <br>
+  GET通信
+  <s:form method="get" action="TestAction">
+    <s:textfield name="username"/>
+    <s:password name="password"/>
+    <s:submit value="送信"/>
+  </s:form>
+  POST通信
+  <s:form method="post" action="TestAction">
+    <s:textfield name="username"/>
+    <s:password name="password"/>
+    <s:submit value="送信"/>
+  </s:form>
+
 </body>
 </html>
