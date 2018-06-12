@@ -8,7 +8,7 @@
 <title>HelloStruts</title>
 </head>
 <body>
-<h1>HelloStruts</h1>
+<h1>HelloStruts2!</h1>
 <br>
 
 <table>

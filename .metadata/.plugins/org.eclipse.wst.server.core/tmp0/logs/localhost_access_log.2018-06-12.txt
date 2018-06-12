@@ -1,0 +1,6 @@
+127.0.0.1 - - [12/Jun/2018:13:03:42 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [12/Jun/2018:13:03:45 +0900] "GET /WebProj4/ HTTP/1.1" 200 2354
+0:0:0:0:0:0:0:1 - - [12/Jun/2018:13:03:47 +0900] "POST /WebProj4/WelcomeAction.action;jsessionid=04C79D9160487C88E12299605A8C388C HTTP/1.1" 200 853
+0:0:0:0:0:0:0:1 - - [12/Jun/2018:13:03:55 +0900] "POST /WebProj4/LoginAction.action HTTP/1.1" 200 365
+0:0:0:0:0:0:0:1 - - [12/Jun/2018:13:03:55 +0900] "GET /WebProj4/css/style.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [12/Jun/2018:13:03:59 +0900] "POST /WebProj4/HelloStrutsAction.action;jsessionid=04C79D9160487C88E12299605A8C388C HTTP/1.1" 200 1678
