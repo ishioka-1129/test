@@ -13,4 +13,5 @@
 <fullyQualifiedTypeName name="java.io.PrintWriter"/>
 <fullyQualifiedTypeName name="com.internousdev.login.util.DBConnector"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
+<fullyQualifiedTypeName name="org.omg.CORBA.Object"/>
 </qualifiedTypeNameHistroy>
