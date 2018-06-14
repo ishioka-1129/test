@@ -65,3 +65,10 @@
 0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:11:38 +0900] "GET /WebProj5/TestAction.action?username=qwe&password=123 HTTP/1.1" 200 412
 0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:12:06 +0900] "GET /WebProj5/TestAction.action?username=qwe&password=123 HTTP/1.1" 200 467
 0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:16:34 +0900] "GET /WebProj4/ HTTP/1.1" 200 2354
+127.0.0.1 - - [13/Jun/2018:17:17:36 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:17:38 +0900] "GET /WebProj5/ HTTP/1.1" 200 2132
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:19:56 +0900] "POST /WebProj5/TestAction.action HTTP/1.1" 200 412
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:21:34 +0900] "POST /WebProj5/TestAction.action HTTP/1.1" 200 467
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:29:55 +0900] "GET /WebProj5/ HTTP/1.1" 200 2352
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:30:00 +0900] "GET /WebProj5/TestAction.action;jsessionid=34D2EAF7E0C417CED04A87676F0C8F37?username=qwe&password=123 HTTP/1.1" 200 522
+0:0:0:0:0:0:0:1 - - [13/Jun/2018:17:30:10 +0900] "POST /WebProj5/TestAction.action;jsessionid=34D2EAF7E0C417CED04A87676F0C8F37 HTTP/1.1" 200 577
