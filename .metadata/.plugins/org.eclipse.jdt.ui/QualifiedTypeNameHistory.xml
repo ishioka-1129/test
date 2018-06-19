@@ -14,4 +14,5 @@
 <fullyQualifiedTypeName name="com.internousdev.login.util.DBConnector"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.ActionSupport"/>
 <fullyQualifiedTypeName name="org.omg.CORBA.Object"/>
+<fullyQualifiedTypeName name="java.sql.SQLException"/>
 </qualifiedTypeNameHistroy>
