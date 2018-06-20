@@ -28,3 +28,5 @@
 0:0:0:0:0:0:0:1 - - [19/Jun/2018:17:11:42 +0900] "GET /ecsite/LogoutAction.action HTTP/1.1" 200 3437
 0:0:0:0:0:0:0:1 - - [19/Jun/2018:17:12:00 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2755
 0:0:0:0:0:0:0:1 - - [19/Jun/2018:17:12:08 +0900] "POST /ecsite/HomeAction.action HTTP/1.1" 200 2755
+127.0.0.1 - - [19/Jun/2018:17:51:53 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [19/Jun/2018:17:51:55 +0900] "GET /ecsite/buyItemConfirm.jsp HTTP/1.1" 200 2282
