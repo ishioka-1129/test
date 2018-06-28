@@ -1,0 +1,58 @@
+package com.internousdev.sampleweb.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.sampleweb.dao.ManagerLoginDAO;
+import com.internousdev.sampleweb.dto.ManagerLoginDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ManagerLoginAction extends ActionSupport implements SessionAware{
+
+	private String loginManagerId;
+	private String loginPassword;
+	private String result;
+	private Map<String, Object> session;
+
+	public String execute(){
+		ManagerLoginDAO mlDAO = new ManagerLoginDAO();
+		ManagerLoginDTO mlDTO = new ManagerLoginDTO();
+
+		result = ERROR;
+		mlDTO = mlDAO.getLoginManagerInfo(loginManagerId, loginPassword);
+		session.put("loginManager", mlDTO);
+
+		if(((ManagerLoginDTO) session.get("loginManager")).getLoginFlg()){
+			result = SUCCESS;
+
+			return result;
+		}
+		return result;
+	}
+
+	public String getLoginManagerId() {
+		return loginManagerId;
+	}
+
+	public void setLoginManagerId(String loginManagerId) {
+		this.loginManagerId = loginManagerId;
+	}
+
+	public String getLoginPassword() {
+		return loginPassword;
+	}
+
+	public void setLoginPassword(String loginPassword) {
+		this.loginPassword = loginPassword;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+}
