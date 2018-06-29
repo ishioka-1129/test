@@ -35,11 +35,11 @@
   border:1px solid #333;
   }
 
-  #header{
+#header{
   width:100%;
   height:80px;
-  background-color:black;
-  }
+  background-image:linear-gradient(lightgreen,white);
+}
 
   #main{
   width:100%;
@@ -50,7 +50,7 @@
   #footer{
   width:100%;
   height:80px;
-  background-color:black;
+  background-image:linear-gradient(white,lightgreen);
   clear:both;
   }
 
@@ -100,7 +100,12 @@
             </td>
           </s:form>
         </table>
-      </div>
+        <div><br/></div>
+        <div>
+      <span>内容を修正する場合は</span>
+      <a href='<s:url action="UserCreateAction" />'>こちら</a>
+    </div>
+    </div>
     </div>
     <div id="footer">
       <div id="pr">

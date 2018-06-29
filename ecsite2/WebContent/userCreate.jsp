@@ -35,11 +35,11 @@
   border:1px solid #333;
   }
 
-  #header{
+#header{
   width:100%;
   height:80px;
-  background-color:black;
-  }
+  background-image:linear-gradient(lightgreen,white);
+}
 
   #main{
   width:100%;
@@ -50,8 +50,12 @@
   #footer{
   width:100%;
   height:80px;
-  background-color:black;
+  background-image:linear-gradient(white,lightgreen);
   clear:both;
+  }
+
+  #message{
+  color:red;
   }
 
 </style>
@@ -67,9 +71,11 @@
       <p>UserCreate</p>
     </div>
     <div>
+    <div id="message">
       <s:if test="errerMessage != ''">
         <s:property value="errorMessage" escape="false" />
       </s:if>
+      </div>
       <table>
         <s:form action="UserCreateConfirmAction">
         <tr>
@@ -99,6 +105,7 @@
         <s:submit value="登録" />
       </s:form>
     </table>
+    <div><br/></div>
     <div>
       <span>前画面に戻るには</span>
       <a href='<s:url action="HomeAction" />'>こちら</a>
