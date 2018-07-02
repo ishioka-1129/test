@@ -2,7 +2,6 @@ INDEX VERSION 1.3+C:\Users\internousdev\Desktop\workspace\workspace-ishioka\test
 2624087116.index
 1549101164.index
 957774306.index
-2624087116.index
 1270614830.index
 3082098993.index
 152053632.index
