@@ -1,0 +1,53 @@
+package gametest;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.Random;
+
+
+public class kazuate{
+
+public static void main(String[] args) {
+	Random random = new Random();
+
+	int answer = random.nextInt(1000);
+	int count = 0;
+	int userAnswer = 0;
+
+	System.out.println("0～999の数字を入力してください");
+
+	while(count < 10) {
+		System.out.printf("%d> ", count + 1);
+		userAnswer = getNumberInput();
+
+	}
+
+	private static String getStringInput() {
+		BufferedReader br = null;
+		String line = null:
+
+			try {
+				br = new BufferedReader(new InputStreamReader(System.in));
+				line = br.readLine();
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		return line;
+	}
+
+	private static int getNumberInput() {
+		int userAnswer = -1;
+
+		do {
+			String s = getStringInput();
+			try {
+				userAnswer = Integer.parseInt(s);
+			} catch(NumberFormatException e) {
+				System.out.print("もう一度入力してください > ");
+			}
+		} while(userAnswer == -1);
+
+		return userAnswer;
+	}
+}

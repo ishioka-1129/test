@@ -1,0 +1,294 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.ui.theme" value="simple" />
+	<!-- 開発者モード(デバッグしたい時にはコメント外してください。ユーザーのエラーページが無効にできます) -->
+	<!-- <constant name="struts.devMode" value="true" />  -->
+	<package name="com.internousdev.kagiya.action" extends="struts-default">
+
+		<!--CreateUserAction -->
+ 		<action name="CreateUserAction"
+			class="com.internousdev.kagiya.action.CreateUserAction"
+			method="execute">
+			<result name="success">createUser.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--CreateUserConfirmAction -->
+		<action name="CreateUserConfirmAction"
+			class="com.internousdev.kagiya.action.CreateUserConfirmAction"
+			method="execute">
+			<result name="success">createUserConfirm.jsp</result>
+			<result name ="error">createUser.jsp</result>
+		</action>
+
+
+		<!--CreateUserCompleteAction -->
+		<action name="CreateUserCompleteAction"
+			class="com.internousdev.kagiya.action.CreateUserCompleteAction"
+			method="execute">
+			<result name="success">createUserComplete.jsp</result>
+			<result name ="error">createUser.jsp</result>
+		</action>
+
+
+		<!--GoLoginAction -->
+		<action name="GoLoginAction"
+			class="com.internousdev.kagiya.action.GoLoginAction"
+			method="execute">
+			<result name="success">login.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+			<!--LoginAction -->
+		<action name="LoginAction"
+			class="com.internousdev.kagiya.action.LoginAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+			<result name ="settlement">settlementConfirm.jsp</result>
+			<result name ="error">login.jsp</result>
+		</action>
+
+
+			<!--ResetPasswordAction -->
+  		<action name="ResetPasswordAction"
+			class="com.internousdev.kagiya.action.ResetPasswordAction"
+			method="execute">
+			<result name="success">resetPassword.jsp</result>
+			<result name ="error">login.jsp</result>
+		</action>
+
+ 			<!--ResetPasswordConfirmAction -->
+		<action name="ResetPasswordConfirmAction"
+			class="com.internousdev.kagiya.action.ResetPasswordConfirmAction"
+			method="execute">
+			<result name="success">resetPasswordConfirm.jsp</result>
+			<result name ="error">resetPassword.jsp</result>
+		</action>
+
+
+			<!--ResetPasswordCompleteAction -->
+  		<action name="ResetPasswordCompleteAction"
+			class="com.internousdev.kagiya.action.ResetPasswordCompleteAction"
+			method="execute">
+			<result name="success">resetPasswordComplete.jsp</result>
+			<result name ="error">resetPassword.jsp</result>
+		</action>
+
+
+		<!--ProductListAction -->
+  		<action name="ProductListAction"
+			class="com.internousdev.kagiya.action.ProductListAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+			<!--ProductDetailsAction -->
+		<action name="ProductDetailsAction"
+			class="com.internousdev.kagiya.action.ProductDetailsAction"
+			method="execute">
+			<result name="success">productDetails.jsp</result>
+			<result name ="error">productList.jsp</result>
+		</action>
+
+
+			<!--SearchItemAction -->
+		<action name="SearchItemAction"
+			class="com.internousdev.kagiya.action.SearchItemAction"
+			method="execute">
+			<result name="success">productList.jsp</result>
+			<result name ="error">productList.jsp</result>
+		</action>
+
+
+			<!--HomeAction -->
+		<action name="HomeAction"
+			class="com.internousdev.kagiya.action.HomeAction"
+			method="execute">
+			<result name="success">home.jsp</result>
+		</action>
+
+
+			<!--AddCartAction -->
+		<action name="AddCartAction"
+			class="com.internousdev.kagiya.action.AddCartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--CartAction -->
+		<action name="CartAction"
+			class="com.internousdev.kagiya.action.CartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--DeleteCartAction -->
+		<action name="DeleteCartAction"
+			class="com.internousdev.kagiya.action.DeleteCartAction"
+			method="execute">
+			<result name="success">cart.jsp</result>
+			<result name ="error">cart.jsp</result>
+		</action>
+
+
+		<!--SettlementConfirmAction -->
+		<action name="SettlementConfirmAction"
+			class="com.internousdev.kagiya.action.SettlementConfirmAction"
+			method="execute">
+			<result name="success">settlementConfirm.jsp</result>
+			<result name ="error">login.jsp</result>
+		</action>
+
+		<!--SettlementCompleteAction -->
+		<action name="SettlementCompleteAction"
+			class="com.internousdev.kagiya.action.SettlementCompleteAction"
+			method="execute">
+			<result name="success">settlementComplete.jsp</result>
+			<result name ="error">settlementConfirm.jsp</result>
+		</action>
+
+
+		<!--CreateDestinationAction -->
+		<action name="CreateDestinationAction"
+			class="com.internousdev.kagiya.action.CreateDestinationAction"
+			method="execute">
+			<result name="success">createDestination.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--CreateDestinationConfirmAction -->
+  		<action name="CreateDestinationConfirmAction"
+			class="com.internousdev.kagiya.action.CreateDestinationConfirmAction"
+			method="execute">
+			<result name="success">createDestinationConfirm.jsp</result>
+			<result name ="error">createDestination.jsp</result>
+		</action>
+
+		<!--CreateDestinationCompleteAction -->
+  		<action name="CreateDestinationCompleteAction"
+			class="com.internousdev.kagiya.action.CreateDestinationCompleteAction"
+			method="execute">
+			<result name="success">createDestinationComplete.jsp</result>
+			<result name ="error">createDestination.jsp</result>
+		</action>
+
+
+		<!--MyPageAction -->
+		<action name="MyPageAction"
+			class="com.internousdev.kagiya.action.MyPageAction"
+			method="execute">
+			<result name="success">mypage.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--PurchaseHistoryAction -->
+		<action name="PurchaseHistoryAction"
+			class="com.internousdev.kagiya.action.PurchaseHistoryAction"
+			method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+		</action>
+
+
+		<!--DeletePurchaseHistoryAction -->
+		<action name="DeletePurchaseHistoryAction"
+			class="com.internousdev.kagiya.action.DeletePurchaseHistoryAction"
+			method="execute">
+			<result name="success">purchaseHistory.jsp</result>
+			<result name ="error">home.jsp</result>
+		</action>
+
+
+		<!--LogoutAction -->
+		<action name="LogoutAction"
+			class="com.internousdev.kagiya.action.LogoutAction"
+			method="execute">
+			<result name="success">index.jsp</result>
+		</action>
+
+
+		<!--AdminAction -->
+		<action name="AdminAction"
+			class="com.internousdev.kagiya.action.AdminAction"
+			method="execute">
+			<result name="success">adminPage.jsp</result>
+		</action>
+
+
+		<!--ProductAddAction -->
+ 		<action name="ProductAddAction"
+			class="com.internousdev.kagiya.action.ProductAddAction"
+			method="execute">
+			<result name="success">productAdd.jsp</result>
+			<result name ="error">adminPage.jsp</result>
+		</action>
+
+
+ 		<!--ProductAddConfirmAction -->
+  		<action name="ProductAddConfirmAction"
+			class="com.internousdev.kagiya.action.ProductAddConfirmAction"
+			method="execute">
+			<result name="success">productAddConfirm.jsp</result>
+			<result name ="error">productAdd.jsp</result>
+		</action>
+
+
+ 		<!--ProductAddCompleteAction -->
+		<action name="ProductAddCompleteAction"
+			class="com.internousdev.kagiya.action.ProductAddCompleteAction"
+			method="execute">
+			<result name="success">productAddComplete.jsp</result>
+			<result name ="error">productAdd.jsp</result>
+		</action>
+
+
+		 <!--ProductDeleteAction -->
+		<action name="ProductDeleteAction"
+			class="com.internousdev.kagiya.action.ProductDeleteAction"
+			method="execute">
+			<result name="success">productDelete.jsp</result>
+			<result name ="error">adminpage.jsp</result>
+		</action>
+
+
+		 <!--ProductDeleteConfirmAction -->
+		<action name="ProductDeleteConfirmAction"
+			class="com.internousdev.kagiya.action.ProductDeleteConfirmAction"
+			method="execute">
+			<result name="success">productDeleteConfirm.jsp</result>
+			<result name ="error">productDelete.jsp</result>
+		</action>
+
+		 <!--ProductDeleteCompleteAction -->
+		<action name="ProductDeleteCompleteAction"
+			class="com.internousdev.kagiya.action.ProductDeleteCompleteAction"
+			method="execute">
+			<result name="success">productDeleteComplete.jsp</result>
+			<result name ="error">productDelete.jsp</result>
+		</action>
+
+		<!-- StartAction -->
+		<action name ="StartAction"
+		class = "com.internousdev.kagiya.action.StartAction" method ="execute">
+		<result name = "success">home.jsp</result>
+		</action>
+
+		<!-- AdminPaginationAction -->
+ 		<action name="AdminPaginationAction"
+ 		class="com.internousdev.kagiya.action.AdminPaginationAction" method="execute">
+ 		<result name="delete">productDelete.jsp</result>
+ 		</action>
+
+	</package>
+</struts>
