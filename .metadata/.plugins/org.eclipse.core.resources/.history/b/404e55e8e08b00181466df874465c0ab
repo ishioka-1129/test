@@ -1,0 +1,49 @@
+package blockout;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseMotionListener;
+
+import javax.swing.JPanel;
+
+public class MainPanel extends JPanel implements Runnable, MouseMotionListener {
+	public static final int WIDTH = 360;
+	public static final int HEIGHT = 480;
+	
+	private static final int NUM_BLOCK_ROW = 10;
+	
+	private static final int NUM_BLOCK_COL = 7;
+	
+	private static final int NUM_BLOCK = NUM_BLOCK_ROW * NUM_BLOCK_COL;
+	
+	private Racket racket;
+	private Ball ball;
+	private Block[] block;
+	
+	private Thread gameLoop;
+	
+	public MainPanel() {
+		setPreferredSize(new Dimension(WIDTH, HEIGHT));
+		addMouseMotionListener(this);
+		
+		racket = new Racket();
+		ball = new Ball();
+		block = new Block[NUM_BLOCK];
+		
+		for(int i = 0; i < NUM_BLOCK_ROW; i++) {
+			for(int j = 0; j < NUM_BLOCK_COL; j++) {
+				int x = j * Block.WIDTH + Block.WIDTH;
+				int y = i * Block.HEIGHT + Block.HEIGHT;
+				block[i * NUM_BLOCK_COL + j] = new Block(x,y);
+			}
+		}
+		
+		gameLoop = new Thread(this);
+		gameLoop.start();
+	}
+	
+	
+
+}

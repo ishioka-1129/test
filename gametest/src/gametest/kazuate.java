@@ -25,13 +25,23 @@ public static void main(String[] args) {
 		userAnswer = getNumberInput();
 		System.out.printf("\t%d ..... ", userAnswer);
 		if(answer == userAnswer) {
-			System.out.println("正解！");
+			System.out.println("正解！おめでとう！");
 			break;
 		} else if (answer < userAnswer) {
 			System.out.println("大きすぎます！");
 		} else {
 			System.out.println("小さすぎます！");
 		}
+
+		int a = answer - userAnswer;
+		if(10 >= a){
+			if(a >= -10){
+				if(a != 0){
+					System.out.println("	おしい！");
+				}
+			}
+		}
+
 		count++;
 	}
 
@@ -64,7 +74,7 @@ public static void main(String[] args) {
 			try {
 				userAnswer = Integer.parseInt(s);
 			} catch(NumberFormatException e) {
-				System.out.print("もう一度入力してください500 > ");
+				System.out.println("もう一度入力してください");
 			}
 		} while(userAnswer == -1);
 

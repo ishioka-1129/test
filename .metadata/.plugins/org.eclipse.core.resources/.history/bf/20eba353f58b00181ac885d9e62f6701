@@ -1,0 +1,308 @@
+package blockBreak;
+
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Graphics;
+import java.awt.Image;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+
+public class BlockBreak extends java.applet.Applet implements Runnable, MouseMotionListener, MouseListener {
+
+	int speed = 30; // 表示時間
+	int num = 3; // ボールの残数
+	int bx, by; // ボールの位置(ｘ座標、y座標)
+	int rx = 60, ry = 150; //ラケットの位置(ｘ座標、y座標)
+	int ballWidth = 8, ballHeight = 8; // ボールの絵の幅、高さ
+	int racketWidth = 20, racketHeight = 4; //ラケットの幅、高さ
+	int margin = 5; // 端まで行かないように余裕をとる
+	int score; // 点数
+
+	int block[] = new int[30]; // ブロックがあるかどうかの配列
+	int x[] = new int[30]; // ブロックのｘ座標
+	int y[] = new int[30]; // ブロックのｙ座標
+	int blockWidth = 15, blockHeight = 8; //ブロックの幅、高さ
+
+	boolean loop = true; // 繰り返すための変数
+	Thread kicker = null; // アニメーションのためのスレッド変数
+
+	Dimension d; // 表示領域
+	Image offs; // オフスクリーン
+	Graphics grf;
+
+	public void init() {
+		int i , j; // カウンター
+		int k; // ブロック番号
+		int yy; // 段毎のｙ座標
+
+		// ブロックの位置（ｘ、ｙ座標）の設定
+		k = 0;
+		for (i = 0; i < 3; i++){
+			yy = i * (blockHeight + 3) + margin * 3;
+			for(j = 0; j< 10; j++){
+				x[k] = j * (blockWidth + 4) + margin + 2;
+				y[k] = yy;
+				block[k] = 1; // ブロックがある
+				k = k + 1;
+			}
+		}
+
+		// オフスクリーンの設定
+		d = getSize(999,999);
+		offs = createImage(d.width, d.height);
+		grf = offs.getGraphics();
+
+		// ボールの初期位置の設定
+		bx = margin + (int)(Math.random() * (float)(d.width - (margin * 2 + ballWidth + 1)));
+		by = 50;
+
+		// マウスモーションリスナとして自分自身を登録
+		addMouseMotionListener(this);
+
+		// マウスリスナとして自分自身を登録
+		addMouseListener(this);
+	}
+
+	private Dimension getSize(int width, int height) {
+		// TODO 自動生成されたメソッド・スタブ
+		return null;
+	}
+
+	public void paint(Graphics g){
+		update(g);
+	}
+
+	public void update(Graphics g){
+		int i; // カウンター
+
+		// バックをオレンジで塗る
+		grf.setColor(Color.orange);
+		grf.fillRect(0, 0, d.width, d.height);
+		grf.setColor(Color.green);
+		grf.fillRect(margin, margin, d.width * 2, d.height * 2);
+
+		// ラケットを描く
+		grf.setColor(Color.white);
+		grf.fillRect(rx, ry, racketWidth, racketHeight);
+
+		// ブロックを描く
+		for(i = 0; i < 30 ; i++){
+			if(i < 10){
+				// 1段目は青
+				grf.setColor(Color.blue);
+			}
+			if(10 <= i && i < 20){
+				// 2段目は赤
+				grf.setColor(Color.red);
+			}
+			if(20 <= i){
+				// 3段目はシアン
+				grf.setColor(Color.cyan);
+			}
+			if(block[i] == 1) {
+				// ブロックがあれば、ブロックを描く
+				grf.fillRect(x[i], y[i], blockWidth, blockHeight);
+			}
+		}
+
+		// ボールを描く
+		grf.setColor(Color.yellow);
+		grf.fillOval(bx, by, ballWidth, ballHeight);
+		grf.setColor(Color.black);
+		grf.drawOval(bx, by, ballWidth, ballHeight);
+
+		// 点数の表示
+		grf.setColor(Color.black);
+		grf.drawString("Score : "+ score, 12, 12);
+		if(num < 0){
+			grf.setColor(Color.red);
+			grf.drawString("GAME OVER!", 20, 80);
+		}
+		if(score == 30) {
+			grf.setColor(Color.black);
+			grf.drawString("PERFECT!", 20, 80);
+		}
+		if(!loop){
+			//RESTARTボタンの描画
+			grf.setColor(Color.blue);
+			grf.fillRect(48, 120, 65, 25);
+			grf.setColor(Color.white);
+			grf.drawString("RESTART", 55, 138);
+			grf.setColor(Color.white);
+			grf.drawLine(48, 120, 113, 120);
+			grf.drawLine(48, 120, 48, 145);
+			grf.setColor(Color.black);
+			grf.drawLine(48, 145, 113, 145);
+			grf.drawLine(113, 124, 113, 120);
+		}
+
+		//オフスクリーンのイメージを一挙に実際の表示領域に描く
+		g.drawImage(offs, 0, 0, this);
+	}
+
+	public void mouseDragged(MouseEvent e){
+		// マウスが押されてドラッグされた
+	}
+
+	public void mouseMoved(MouseEvent e){
+		// マウスが移動した
+
+		rx = e.getX(); //ラケットの位置の更新
+
+		// ラケットがコートを出ないための処理
+		if(rx < margin) {
+			rx = margin;
+		}
+		if(rx + racketWidth > d.width - margin){
+			rx = d.width - margin - racketWidth;
+		}
+
+		repaint();
+	}
+
+	public void start(){
+		if(kicker == null){
+			// スレッドを実行させる
+			kicker = new Thread(this);
+			kicker.start();
+		}
+	}
+
+	public void stop(){
+		// スレッドを止める
+		kicker = null;
+	}
+
+	public void run(){
+		int dx = 2, dy = 2; // ボールの進む量（ｘ増分、ｙ増分）
+		int i; // カウンター
+
+		// 実行中のスレッドをチェック
+		Thread thisThread = Thread.currentThread();
+
+		// 繰り返し
+		while(loop && kicker == thisThread){
+
+			// ラケットに当たったときの処理
+			if(by + ballHeight >= ry && by + ballHeight <= ry + racketHeight && bx + ballWidth >= rx && bx <= rx + racketWidth){
+				// ラケットに当たったら上へ返す
+				dy = -2;
+				if(bx < rx || bx + ballWidth > rx + racketWidth){
+					// ラケットの端に当たったとき
+					if(dx == 0){
+						// 垂直にきたボール
+						if(bx < rx){
+							// 左端に当たったら左斜め上に返す
+							dx = -2; // 左斜め上に返す
+						}
+						if(bx + ballWidth > rx + racketWidth){
+							// 右端に当たったら右斜め上に返す
+							dx = +2;
+						}
+					}else{
+						// 斜めにきたボールは垂直に返す
+						dx = 0;
+					}
+				}
+			}
+
+			// 左端、右端、上端に来たときの処理
+			if(bx < 0 + margin){
+				// 左端にきたら反転
+				dx = 2;
+			}
+			if(bx + ballWidth > d.width - margin){
+				// 右端にきたら反転
+				dx = -2;
+			}
+			if(by < 0 + margin){
+				// 上端にきたら反転
+				dy = 2;
+			}
+
+			// ラケットの下へ行ったときの処理
+			if(by + ballHeight > d.height - margin){
+				// 下端にきたらボールを初期位置へ
+				bx = margin + (int)(Math.random() * (float)(d.width - (margin * 2 + ballWidth + 1)));
+				by = 50;
+				num = num - 1; // ボールの残数を減らす
+			}
+
+			// ブロックに当たったときの処理
+			for(i = 0; i < 30; i++){
+				if(block[i] == 1){
+					if(by + ballHeight >= y[i] && by <= y[i] + blockHeight
+							&& bx + ballWidth >= x[i] && bx <= x[i] + blockWidth){
+				// ブロックにあたったら反転
+				dy = -dy;
+				score = score + 1; // 得点の加算
+				block[i] = 0; // ブロックを消す
+				if(10 <= i && i < 20){
+					speed = 15;
+				}else{
+					speed = 30;
+				}
+			}
+		}
+	}
+
+	// ゲーム終了の判定
+	if(num < 0 || score == 30){
+		loop = false;
+	}
+
+	bx = bx + dx;
+	by = by + dy;
+
+	repaint();
+
+	try{
+		Thread.sleep(speed);
+	}catch(InterruptedException e){}
+		}
+}
+
+	public void mousePressed(MouseEvent e){
+		int ix, iy; // マウスが押された座標
+
+		// マウスが押された座標を得る
+		ix = e.getX();
+		iy = e.getY();
+
+		if(ix > 48 && ix < 113 && iy > 120 && iy < 145){
+			// マウスの座標（ｉｘ、ｉｙ）がRESTARTボタン内なら再スタート
+			stop();
+			gameStart();
+			repaint();
+		}
+	}
+
+	public void mouseReleased(MouseEvent e){
+		// マウスボタンが離れたら
+	}
+	public void mouseClicked(MouseEvent e){
+		// マウスボタンがクリックされた
+	}
+	public void mouseEntered(MouseEvent e){
+		// マウスカーソルが入ってきた
+	}
+	public void mouseExited(MouseEvent e){
+		// マウスカーソルが出て行った
+	}
+
+	public void gameStart(){
+		int i;
+		// 変数の初期化
+		num = 3; // ボールの残数をリセット
+		score = 0; // 点数のリセット
+		speed = 30; // 速度のリセット
+		for(i = 0; i < 30; i++){
+			block[i] = 1; // ブロックがある状態に戻す
+		}
+		bx = margin + (int)(Math.random() * (float)(d.width - (margin * 2 + ballWidth + 1)));
+		by = 50;
+		loop = true;
+		start();
+	}
+}

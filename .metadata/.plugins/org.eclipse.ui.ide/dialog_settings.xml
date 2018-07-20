@@ -8,10 +8,12 @@
 		<item value="179" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="ExternalProjectImportWizard">
-		<item value="false" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
+		<item value="true" key="WizardProjectsImportPage.STORE_NESTED_PROJECTS"/>
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="C:\Users\internousdev\Downloads\javagame-master\javagame-master"/>
+			<item value="C:\Users\internousdev\Desktop\thunder1"/>
 			<item value="C:\Users\internousdev\Downloads\sample-web-master"/>
 		</list>
 		<list key="WizardProjectsImportPage.STORE_ARCHIVES">
